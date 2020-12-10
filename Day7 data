@@ -1,0 +1,27 @@
+**Day7**
+
+sudo docker container run --name mydb -d -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=myb -p 9090:3306 mysql:5.7
+sudo docker container ls
+mysql -u root --port 9090 --protocol tcp -p
+
+create table user (id integer primary key auto_increment, firstname varchar(100));
+insert into user(firstname) values ('user1');
+
+
+sudo docker image build . -t mywebsite
+docker container run -d -p 8080:80 --name website mywebsite
+ sudo docker container ls
+ng build --prod
+
+cd ../..
+sudo docker image build . -t angularwebsite
+sudo docker container run -d -p 8080:80 angularwebsite
+
+//to push on dockerhub
+sudo docker login
+sudo docker image tag myappdb prajaktabagade/myappdb
+sudo docker image push prajaktabagade/myappdb
+sudo docker image pull prajaktabagade/myappdb
+sudo docker container run -d -p 9090:3306 prajaktabagade/myappdb
+sudo docker container ls
+mysql -u root --protocol tcp --port 9090 -p

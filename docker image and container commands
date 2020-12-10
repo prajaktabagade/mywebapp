@@ -1,0 +1,70 @@
+ **Commands related to Containers**
+
+sudo docker container ls      //list running containers
+sudo docker container ls -a   //to see stopped container
+sudo docker container start ubuntu  or  sudo docker container run ubuntu
+sudo docker container ls
+sudo docker container rm 646
+sudo docker container ls
+
+***
+sudo docker container run ubuntu
+sudo docker image history ubuntu
+
+//following commands will get executed in container after below command
+sudo docker container run -it ubuntu   //i-interactive, t-teletype
+root@be7e6920e0dc:/# ls
+mkdir code
+cd code
+touch file1.txt touch file1.txt
+ls
+exit  //come out of container
+sudo docker container ls
+sudo docker container ls -a
+sudo docker container rm be7 //delete container
+
+//stop a container
+sudo docker container stop <container>
+// remove a container
+sudo docker container rm <container>
+get stats of selected container
+sudo docker container stats <container>
+//Execute a command in a container
+sudo docker container exec <container>
+
+//for image download
+sudo docker image ls
+sudo docker image pull node
+
+apt-get install curl
+ curl http://localhost
+-------------------------------------------------------------------------------------------------------
+For Building Docker Image
+
+sudo docker container run -d httpd  // -d = detached mode
+sudo docker container inspect 3f1d41f44d19   //to connect on port
+
+sudo docker container rm 468d33602531  --force
+---------------------------------------------------------------------------------------------------------
+
+Port forwarding (bridge):
+sudo docker container run -d -p 5678:80 httpd
+
+//to connect to container externally
+sudo docker container ls
+sudo docker container exec -it oe2 bash
+cd htdocs/
+cat index.html
+/usr/local/apache2/htdocs#
+
+//in vim use
+esc :wq
+
+
+kubernetes setup
+introduction to YAML
+
+//Day7
+sudo docker container run --name mydb -d -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=myb -p 9090:3306 mysql:5.7
+
+
